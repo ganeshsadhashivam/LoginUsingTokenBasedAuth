@@ -10,7 +10,7 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 // middleware
 
 const mainRouter = require("./routes/main");
-app.use(express.static("./public/index.html"));
+app.use(express.static("../public/index.html"));
 app.use(express.json());
 
 app.use("/api/v1", mainRouter);
