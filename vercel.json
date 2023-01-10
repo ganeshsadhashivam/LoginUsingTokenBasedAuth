@@ -6,8 +6,11 @@
       "use": "@now/node"
     }
   ],
+  "routes": [
+    {
+      "src": "/(.*)",
 
-  "routes": [{ "src": "/product/(?<id>[^/]+)", "dest": "/api/product?id=$id" }],
-
-  "rewrites": [{ "source": "/product/:id", "destination": "/api/product" }]
+      "dest": "app.js"
+    }
+  ]
 }
