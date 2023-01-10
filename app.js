@@ -5,7 +5,9 @@ const express = require("express");
 const app = express();
 
 //security packages
+const helmet = require("helmet");
 const cors = require("cors");
+const xss = require("xss-clean");
 
 //connectDB
 const connectDB = require("./db/connect");
@@ -25,7 +27,9 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 //const mainRouter = require("./routes/main");
 //app.use(express.static("./public"));
 app.use(express.json());
+app.use(helmet());
 app.use(cors());
+app.use(xss());
 
 // app.use("/api/v1", mainRouter);
 
